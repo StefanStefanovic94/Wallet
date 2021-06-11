@@ -89,7 +89,7 @@
   letter-spacing: 0em;
   color: #5e9c60;
 }
-button {
+.button button{
   width: 90%;
   justify-content: center;
   align-items: center;
