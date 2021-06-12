@@ -3,20 +3,28 @@ import "./singleItem.css"
 
 const SingleItem = ({ amount, description, svg, created }) => {
 
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     const date = new Date(created);
     let day = date.getDay() + 1
     const month = date.toLocaleString('default', { month: 'long' });
-    console.log(month);
 
     return (
         <div className="singleItem">
-            <div>
-                <h2>{day}{month}</h2>
-                <img src={svg} alt="icon" />
+            <div className="leftDiv">
+                <div className="dateWrap">
+                    <h2>{day}</h2>
+                    <h3>{month}</h3>
+                </div>
+                <div>
+                    <img src={svg} alt="icon" />
+                </div>
             </div>
-            <div>
-                <h2>{amount}</h2>
-                <h2>{description}</h2>
+            <div className="rightDiv">
+                <h3>{description}</h3>
+                <h2>{numberWithCommas(amount)}<span>RSD</span></h2>
             </div>
         </div>
     )

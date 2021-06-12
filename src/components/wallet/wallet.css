@@ -48,7 +48,7 @@
   padding: 6px, 10px, 6px, 10px;
   background: #f2f9f2;
   padding: 5px;
-  color: #5E9C60;
+  color: #5e9c60;
 }
 
 .addWrap .expense {
@@ -61,8 +61,7 @@
   padding: 6px, 10px, 6px, 10px;
   background: #fdecec;
   padding: 5px;
-  color: #E35959;
-
+  color: #e35959;
 }
 
 .addWrap div h3 {
@@ -88,7 +87,6 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
-
 }
 .expense button {
   height: 48px;
@@ -102,6 +100,13 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 900;
-  color: #E35959;
-
+  color: #e35959;
+}
+.main {
+  padding-top: 60.5px;
+  margin-top: 33.5;
+}
+.header {
+  padding-bottom: 33.5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
