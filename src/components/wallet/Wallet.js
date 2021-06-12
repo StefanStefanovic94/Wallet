@@ -10,12 +10,17 @@ class Wallet extends React.Component {
         super();
         this.state = {
             transactions: [],
-            summ: 0
+            summ: 0,
+            toUpdate: 0
         }
     }
 
+    toUpdateState = () => {
+        this.state.toUpdate++
+    }
+
     SummTrans = () => {
-        this.state.transactions.forEach((trans, index) => {
+        this.state.transactions.map((trans, index) => {
             return (
                 this.state.summ += trans.amount
             )
