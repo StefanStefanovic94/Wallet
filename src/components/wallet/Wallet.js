@@ -1,8 +1,9 @@
 import React from "react"
 import axios from "axios"
-import SingleItem from "./allTransactions/singleItem/SingleItem"
 import "./wallet.css"
 import AllTransactions from "./allTransactions/AllTransactions";
+import { Link } from "react-router-dom"
+
 
 class Wallet extends React.Component {
     constructor() {
@@ -75,7 +76,7 @@ class Wallet extends React.Component {
                     <div className="addWrap">
                         <div className="income">
                             <h3>Add an income</h3>
-                            <button>+</button>
+                            <Link to="/wallet/addexpenses"><button>+</button></Link>
                         </div>
                         <div className="expense">
                             <h3>Add an expense</h3>
