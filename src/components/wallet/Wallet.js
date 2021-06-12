@@ -1,6 +1,8 @@
 import React from "react"
 import axios from "axios"
-import SingleItem from "../singleItem/SingleItem"
+import SingleItem from "./allTransactions/singleItem/SingleItem"
+import "./wallet.css"
+import AllTransactions from "./allTransactions/AllTransactions";
 
 class Wallet extends React.Component {
     constructor() {
@@ -43,10 +45,10 @@ class Wallet extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="wrapWallet">
                 {console.log(this.state.transactions)}
                 <div className="header">
-                    <div>
+                    <div className="iconWallet">
                         <svg width="43" height="48" viewBox="0 0 43 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path opacity="0.8" d="M20.2657 0L0 13.4303V13.4556L15.6708 23.8354L20.2657 20.7847V0Z" fill="#7FC481" fill-opacity="0.42" />
                             <path opacity="0.8" d="M0 34.253L20.2657 47.6705V26.8859L15.6708 23.8353L0 34.215V34.253Z" fill="#7FC481" fill-opacity="0.42" />
@@ -56,8 +58,8 @@ class Wallet extends React.Component {
                             <path opacity="0.8" d="M42.5193 34.5443V13.7849L26.8608 24.1646L42.5193 34.5443Z" fill="#5E9C60" />
                         </svg>
                     </div>
-                    <div>
-                        <h2>Current balance</h2>
+                    <div className="summWrap">
+                        <h3>Current balance</h3>
                         <h2>{
                             this.state.transactions.forEach((trans, index) => {
                                 return (
@@ -65,32 +67,26 @@ class Wallet extends React.Component {
                                 )
                             })
                         }
-                            {this.numberWithCommas(this.state.summ)} RSD
+                            {this.numberWithCommas(this.state.summ)} <span>RSD</span>
                         </h2>
 
                     </div>
 
-                    <div>
-                        <div>
-                            <h3></h3>
-                            <button>Add an income</button>
+                    <div className="addWrap">
+                        <div className="income">
+                            <h3>Add an income</h3>
+                            <button>+</button>
                         </div>
-                        <div>
-                            <h3></h3>
-                            <button>Add an expense</button>
+                        <div className="expense">
+                            <h3>Add an expense</h3>
+                            <button>-</button>
                         </div>
                     </div>
 
                 </div>
 
                 <div className="main">
-                    <div>{
-                        this.state.transactions.map((trans, index) => {
-                            return (
-                                <SingleItem amount={trans.amount} description={trans.description} svg={trans.icon_svg} />
-                            )
-                        })
-                    }</div>
+                    <AllTransactions allTrans={this.state.transactions} />
                 </div>
 
                 <div className="footer"></div>

@@ -7,7 +7,6 @@ class Wallet extends React.Component {
     }
 
     componentDidMount() {
-        // GET request using axios with set headers
         const headers = {
             'Authorization': `${localStorage.token}`
 
