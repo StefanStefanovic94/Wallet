@@ -27,7 +27,7 @@
 .dateWrap {
   margin-right: 16px;
 }
-.rightDiv h3 {
+.rigDiv h3 {
   font-family: Lato;
   font-size: 14px;
   font-style: normal;
@@ -38,7 +38,7 @@
   opacity: 0.7;
   margin: 0px;
 }
-.rightDiv h2 {
+.rigDiv h2 {
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
@@ -48,7 +48,7 @@
   text-align: right;
   margin-right: ;
 }
-.rightDiv span {
+.rigDiv span {
   font-family: Lato;
   font-size: 12px;
   font-style: normal;

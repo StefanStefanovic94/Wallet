@@ -1,8 +1,8 @@
 import React from "react"
 import $ from 'jquery';
+import "./singlecategoriesincome.css"
 
-
-const SingleCategories = ({ categories, setId }) => {
+const SingleCategoriesIncome = ({ categories, setId }) => {
 
 
   $("input:checkbox").on('click', function () {
@@ -20,11 +20,17 @@ const SingleCategories = ({ categories, setId }) => {
     <div>{
       categories.map((one) => {
         return (
-          <div>
-            <h2>{one.name}</h2>
-            <h3>{one.description}</h3>
-            <img src={one.icon_svg} alt="icon" />
-            <input onClick={setId} type="checkbox" id={one.id} name="" value="test"></input>
+          <div className="singleCategory">
+            <div className="leftDiv">
+              <div>
+                <img src={one.icon_svg} alt="icon" />
+              </div>
+              <div>
+                <h2>{one.name}</h2>
+                <h3>{one.description}</h3>
+              </div>
+            </div>
+              <input className="butt" onClick={setId} type="checkbox" id={one.id} name="" value="test"></input>
           </div>
         )
       })
@@ -32,4 +38,5 @@ const SingleCategories = ({ categories, setId }) => {
   )
 }
 
-export default SingleCategories
+
+export default SingleCategoriesIncome

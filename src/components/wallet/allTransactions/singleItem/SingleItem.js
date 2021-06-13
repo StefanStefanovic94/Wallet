@@ -22,7 +22,7 @@ const SingleItem = ({ amount, description, svg, created }) => {
                     <img src={svg} alt="icon" />
                 </div>
             </div>
-            <div className="rightDiv">
+            <div className="rigDiv">
                 <h3>{description}</h3>
                 <h2>{numberWithCommas(amount)}<span>RSD</span></h2>
             </div>
