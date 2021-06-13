@@ -44,8 +44,9 @@ class AddExpenses extends React.Component {
             )
             .then((response) => {
                 console.log(response);
+                this.props.history.push("/wallet");
             })
-            .catch((error) => alert("fill all inputs"));
+            .catch((error) => alert("Fill correctly all inputs"));
     };
 
     componentDidMount() {
@@ -66,12 +67,26 @@ class AddExpenses extends React.Component {
         return (
             <div className="wrapLogin">
                 {console.log(this.state.categories)}
+                <div>
+                    <Link to="/wallet">
+                        <div>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.7">
+                                    <path d="M16.0508 3.54749L14.4192 1.92499L5.35333 11L14.4283 20.075L16.0508 18.4525L8.59833 11L16.0508 3.54749Z" fill="black" />
+                                </g>
+                            </svg>
+                        </div>
+                    </Link>
+                    <div>
+                        <h3>Add an income</h3>
+                    </div>
+                </div>
                 <div className="userNameInput">
                     <label></label>
                     <input
                         onChange={this.setAmount}
                         type="text"
-                        placeholder="Amount"
+                        placeholder="Enter amount here"
                     />
                 </div>
                 <div className="passwordInput">
@@ -80,7 +95,7 @@ class AddExpenses extends React.Component {
 
                         onChange={this.setDescription}
                         type="text"
-                        placeholder="Description"
+                        placeholder="Enter description"
                     />
                     <div className="eyeIcon">
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,11 +106,9 @@ class AddExpenses extends React.Component {
                     </div>
                 </div>
                 <div className="button">
-                    <Link to="/wallet">
                         <button onClick={this.submitCredentials}>
                             Submit
                         </button>
-                    </Link>
                 </div>
 
                 <div>

@@ -22,6 +22,7 @@ $("input:checkbox").on('click', function() {
                 return (
                     <div>
                         <h2>{one.name}</h2>
+                        <h3>{one.description}</h3>
                         <img src={one.icon_svg} alt="icon"/>
                         <input onClick={setId} type="checkbox" id={one.id} name="" value="test"></input>
                     </div>
