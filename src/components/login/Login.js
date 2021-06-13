@@ -33,7 +33,7 @@ class Login extends React.Component {
       )
       .then((response) => {
         console.log(response);
-        localStorage.setItem(
+        sessionStorage.setItem(
           "token",
           (response.data.token)
         );

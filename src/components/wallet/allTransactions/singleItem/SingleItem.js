@@ -8,7 +8,7 @@ const SingleItem = ({ amount, description, svg, created }) => {
     }
 
     const date = new Date(created);
-    let day = date.getDay() + 1
+    const day = date.getDate()
     const month = date.toLocaleString('default', { month: 'long' });
 
     return (

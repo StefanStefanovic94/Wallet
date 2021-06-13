@@ -10,44 +10,39 @@ class Wallet extends React.Component {
         super();
         this.state = {
             transactions: [],
-            summ: 0,
-            toUpdate: 0
+            toUpdate: 0,
+            balanceSumm: 0,
+
         }
     }
 
-    toUpdateState = () => {
-        this.state.toUpdate++
-    }
 
-    SummTrans = () => {
-        this.state.transactions.map((trans, index) => {
-            return (
-                this.state.summ += trans.amount
-            )
-        })
-    }
 
     numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    componentDidMount() {
+
+    fetchData = () => {
         const headers = {
-            'Authorization': `${localStorage.token}`
+            'Authorization': `${sessionStorage.token}`
 
         };
 
         axios.get(`https://budgetapp.digitalcube.rs/api/transactions?`, { headers })
             .then(response => {
-                // console.log(response);
-                this.setState({ transactions: response.data.transactions })
+                console.log(response);
+                this.setState({
+                    transactions: response.data.transactions,
+                    balanceSumm: response.data.summary.balance
+                })
             }
             );
-
     }
 
-
-
+    componentDidMount() {
+        this.fetchData()
+    }
 
     render() {
         return (
@@ -73,7 +68,7 @@ class Wallet extends React.Component {
                                 )
                             })
                         }
-                            {this.numberWithCommas(this.state.summ)} <span>RSD</span>
+                            {this.numberWithCommas(this.state.balanceSumm)} <span>RSD</span>
                         </h2>
 
                     </div>
@@ -81,11 +76,11 @@ class Wallet extends React.Component {
                     <div className="addWrap">
                         <div className="income">
                             <h3>Add an income</h3>
-                            <Link to="/wallet/addexpenses"><button>+</button></Link>
+                            <Link to="/wallet/addIncome">  <button>+</button></Link>
                         </div>
                         <div className="expense">
                             <h3>Add an expense</h3>
-                            <button>-</button>
+                            <Link to="/wallet/addexpenses"> <button>-</button></Link>
                         </div>
                     </div>
 
