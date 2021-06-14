@@ -29,4 +29,8 @@
   .leftDiv div {
     margin-right: 19px;
   }
+  .inputDiv{
+    display: flex;
+    align-items: center;
+  }
   

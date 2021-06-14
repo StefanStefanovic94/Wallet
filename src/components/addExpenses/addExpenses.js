@@ -3,6 +3,7 @@ import React from "react"
 import SingleCategories from "./singleCategories/SingleCategories";
 import { Link } from "react-router-dom"
 import "./addexpenses.css"
+import {document,querySelector} from 'jquery';
 
 class AddExpenses extends React.Component {
     constructor() {
@@ -83,7 +84,7 @@ class AddExpenses extends React.Component {
                             </svg>
                         </div>
                     </Link>
-                    <div className="titleHeader">
+                    <div onClick={this.showButton} className="titleHeader">
                         <h3>Add an expense</h3>
                     </div>
                 </div>
@@ -107,7 +108,7 @@ class AddExpenses extends React.Component {
                 </div>
                 <div>
                     <button onClick={this.submitCredentials}>
-                        Submit
+                        Add an expenses
                     </button>
                 </div>
 

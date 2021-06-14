@@ -15,6 +15,12 @@ class AddExpenses extends React.Component {
         }
     }
 
+//     changeClass=()=>{
+// if(idCheckbox===""){
+// className
+// }
+//     }
+
 
     setAmount = (event) => {
         this.setState({ amount: event.target.value });
@@ -102,12 +108,12 @@ class AddExpenses extends React.Component {
                 </div>
                 <div>
                     <button onClick={this.submitCredentials}>
-                        Submit
+                        Add an income
                     </button>
                 </div>
 
-                <div>
-                    <SingleCategoriesIncome categories={this.state.categories} setId={this.setId} />
+                <div className="notActive">
+                    <SingleCategoriesIncome categories={this.state.categories} setId={this.setId} idCheckboxState={this.state.idCheckbox}/>
                 </div>
             </div>
         );
