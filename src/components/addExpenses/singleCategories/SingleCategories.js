@@ -3,7 +3,7 @@ import $ from 'jquery';
 import "./singlecategories.css"
 
 
-const SingleCategories = ({ categories, setId }) => {
+const SingleCategories = ({ categories, setId, idCheckboxState }) => {
 
 
   $("input:radio").on('click', function () {
@@ -18,21 +18,23 @@ const SingleCategories = ({ categories, setId }) => {
   });
 
   return (
-    <div>{
+    <div >{
       categories.map((one) => {
         return (
-          <div className="singleCategory">
-            <div className="leftDiv">
-              <div>
-                <img src={one.icon_svg} alt="icon" />
+          <div className={idCheckboxState === one.id ? "active" : ""}>
+            <div className="singleCategory">
+              <div className="leftDiv">
+                <div>
+                  <img src={one.icon_svg} alt="icon" />
+                </div>
+                <div>
+                  <h2>{one.name}</h2>
+                  <h3>{one.description}</h3>
+                </div>
               </div>
-              <div>
-                <h2>{one.name}</h2>
-                <h3>{one.description}</h3>
+              <div className="inputDiv">
+                <input className="butt" onClick={setId} type="radio" id={one.id} name="" value="test"></input>
               </div>
-            </div>
-            <div className="inputDiv">
-              <input className="butt" onClick={setId} type="radio" id={one.id} name="" value="test"></input>
             </div>
           </div>
         )

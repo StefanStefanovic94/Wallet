@@ -3,6 +3,7 @@ import axios from "axios"
 import "./wallet.css"
 import AllTransactions from "./allTransactions/AllTransactions";
 import { Link } from "react-router-dom"
+import Footer from "./footer/Footer";
 
 
 class Wallet extends React.Component {
@@ -10,7 +11,6 @@ class Wallet extends React.Component {
         super();
         this.state = {
             transactions: [],
-            toUpdate: 0,
             balanceSumm: 0,
 
         }
@@ -90,7 +90,9 @@ class Wallet extends React.Component {
                     <AllTransactions allTrans={this.state.transactions} />
                 </div>
 
-                <div className="footer"></div>
+                <div className="footer">
+                    <Footer/>
+                </div>
             </div>
         )
     }

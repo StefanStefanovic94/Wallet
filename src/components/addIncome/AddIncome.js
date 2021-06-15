@@ -3,6 +3,7 @@ import React from "react"
 import SingleCategoriesIncome from "./singleCategoriesIncome/SingleCategoriesIncome";
 import { Link } from "react-router-dom"
 import "./addincome.css"
+import Footer from "../wallet/footer/Footer";
 
 class AddExpenses extends React.Component {
     constructor() {
@@ -14,12 +15,6 @@ class AddExpenses extends React.Component {
             idCheckbox: "",
         }
     }
-
-//     changeClass=()=>{
-// if(idCheckbox===""){
-// className
-// }
-//     }
 
 
     setAmount = (event) => {
@@ -114,6 +109,9 @@ class AddExpenses extends React.Component {
 
                 <div className="notActive">
                     <SingleCategoriesIncome categories={this.state.categories} setId={this.setId} idCheckboxState={this.state.idCheckbox}/>
+                </div>
+                <div className="footer">
+                    <Footer/>
                 </div>
             </div>
         );
