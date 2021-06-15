@@ -1,6 +1,8 @@
 import React from "react"
 import $ from 'jquery';
 import "./singlecategories.css"
+import PropTypes from "prop-types"
+
 
 
 const SingleCategories = ({ categories, setId, idCheckboxState }) => {
@@ -41,6 +43,12 @@ const SingleCategories = ({ categories, setId, idCheckboxState }) => {
       })
     }</div>
   )
+}
+
+SingleCategories.propTypes = {
+  categories: PropTypes.array,
+  setId:PropTypes.func,
+  idCheckboxState:PropTypes.string
 }
 
 export default SingleCategories

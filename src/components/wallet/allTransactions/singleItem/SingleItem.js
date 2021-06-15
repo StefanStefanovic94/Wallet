@@ -1,5 +1,6 @@
 import React from "react"
 import "./singleItem.css"
+import PropTypes from "prop-types"
 
 const SingleItem = ({ amount, description, svg, created }) => {
 
@@ -30,5 +31,11 @@ const SingleItem = ({ amount, description, svg, created }) => {
     )
 }
 
+SingleItem.propTypes = {
+    amount: PropTypes.number,
+    description:PropTypes.string,
+    idChsvgeckboxState:PropTypes.string,
+    created:PropTypes.string
+  }
 
 export default SingleItem

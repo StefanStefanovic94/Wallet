@@ -1,5 +1,6 @@
 import React from "react"
 import SingleItem from "./singleItem/SingleItem"
+import PropTypes from "prop-types"
 
 const AllTransactions = ({ allTrans }) => {
  
@@ -13,5 +14,9 @@ const AllTransactions = ({ allTrans }) => {
         }</div>
     )
 }
+
+AllTransactions.propTypes = {
+    allTrans:PropTypes.array
+  }
 
 export default AllTransactions
