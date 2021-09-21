@@ -11,6 +11,8 @@ const SingleItem = ({ amount, description, svg, created }) => {
     const date = new Date(created);
     const day = date.getDate()
     const month = date.toLocaleString('default', { month: 'long' });
+    const iconImage=`${`https://budgetapp.digitalcube.rs/assets/icons/categories/`}${svg}`
+    
 
     return (
         <div className="singleItem">
@@ -20,7 +22,7 @@ const SingleItem = ({ amount, description, svg, created }) => {
                     <h3>{month}</h3>
                 </div>
                 <div>
-                    <img src={svg} alt="icon" />
+                    <img src={iconImage} alt="icon" />
                 </div>
             </div>
             <div className="rigDiv">

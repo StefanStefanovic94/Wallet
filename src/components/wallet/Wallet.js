@@ -31,7 +31,7 @@ class Wallet extends React.Component {
 
         axios.get(`https://budgetapp.digitalcube.rs/api/transactions?`, { headers })
             .then(response => {
-                console.log(response);
+                console.log(response.data);
                 this.setState({
                     transactions: response.data.transactions,
                     balanceSumm: response.data.summary.balance
@@ -47,7 +47,7 @@ class Wallet extends React.Component {
     render() {
         return (
             <div className="wrapWallet">
-                {console.log(this.state.transactions)}
+                {console.log(this.state)}
                 <div className="header">
                     <div className="iconWallet">
                         <svg width="43" height="48" viewBox="0 0 43 48" fill="none" xmlns="http://www.w3.org/2000/svg">
