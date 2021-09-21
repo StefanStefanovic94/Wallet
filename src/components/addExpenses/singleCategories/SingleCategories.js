@@ -19,15 +19,18 @@ const SingleCategories = ({ categories, setId, idCheckboxState }) => {
     }
   });
 
+  
+
   return (
     <div >{
       categories.map((one) => {
+        const iconImage=`${`https://budgetapp.digitalcube.rs/assets/icons/categories/`}${one.icon_svg}`
         return (
           <div className={idCheckboxState === one.id ? "active" : ""}>
             <div className="singleCategory">
               <div className="leftDiv">
                 <div>
-                  <img src={one.icon_svg} alt="icon" />
+                  <img src={iconImage} alt="icon" />
                 </div>
                 <div>
                   <h2>{one.name}</h2>
